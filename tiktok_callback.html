@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TikTok Auth — Curiosidades Pipeline</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d0d0f;
+    color: #f0efe8;
+    font-family: system-ui, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .card {
+    background: #141416;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 36px;
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+  }
+  .icon { font-size: 48px; margin-bottom: 16px; }
+  h1 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+  .sub { font-size: 14px; color: #7a7975; margin-bottom: 28px; }
+  .code-box {
+    background: #1c1c1f;
+    border: 1px solid rgba(232,212,77,0.3);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-family: monospace;
+    font-size: 13px;
+    color: #e8d44d;
+    word-break: break-all;
+    margin-bottom: 16px;
+    text-align: left;
+    user-select: all;
+  }
+  button {
+    background: #e8d44d;
+    color: #0d0d0f;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    transition: opacity .15s;
+  }
+  button:hover { opacity: 0.85; }
+  button.copied { background: #4ade8a; }
+  .step {
+    background: #1c1c1f;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #7a7975;
+    line-height: 1.8;
+    margin-top: 20px;
+    text-align: left;
+  }
+  .step strong { color: #f0efe8; }
+  .error { color: #f06060; }
+</style>
+</head>
+<body>
+<div class="card" id="card">
+  <div class="icon">🎵</div>
+  <h1>Autorização TikTok</h1>
+  <div class="sub" id="sub">Lendo código...</div>
+  <div id="content"></div>
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const code   = params.get("code");
+const error  = params.get("error");
+const errMsg = params.get("error_description");
+
+if (error) {
+  document.getElementById("sub").textContent  = "Autorização negada";
+  document.getElementById("sub").className    = "sub error";
+  document.getElementById("content").innerHTML = `<div class="step"><strong>Erro:</strong> ${errMsg || error}</div>`;
+
+} else if (code) {
+  document.getElementById("sub").textContent = "Código recebido! Copie e cole no app.";
+  document.getElementById("content").innerHTML = `
+    <div class="code-box" id="code-display">${code}</div>
+    <button id="copy-btn" onclick="copyCode()">📋 Copiar código</button>
+    <div class="step">
+      <strong>Próximo passo:</strong><br>
+      1. Clique em <strong>Copiar código</strong> acima<br>
+      2. Volte ao app <strong>Curiosidades Pipeline</strong> (localhost:5000)<br>
+      3. Cole o código no campo <strong>"Colar código do TikTok"</strong><br>
+      4. Clique em <strong>Confirmar</strong>
+    </div>
+  `;
+} else {
+  document.getElementById("sub").textContent = "Nenhum código encontrado na URL.";
+}
+
+function copyCode() {
+  navigator.clipboard.writeText(code).then(() => {
+    const btn = document.getElementById("copy-btn");
+    btn.textContent = "✓ Copiado!";
+    btn.className = "copied";
+    setTimeout(() => {
+      btn.textContent = "📋 Copiar código";
+      btn.className = "";
+    }, 3000);
+  });
+}
+</script>
+</body>
+</html>
