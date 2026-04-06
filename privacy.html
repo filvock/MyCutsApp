@@ -3,49 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy – MyCutsApp</title>
+  <title>Privacy Policy – FilvockCutsApp</title>
   <style>
-    body { font-family: sans-serif; max-width: 720px; margin: 60px auto; padding: 0 24px; color: #222; line-height: 1.7; }
-    h1 { font-size: 24px; margin-bottom: 4px; }
-    h2 { font-size: 16px; margin-top: 32px; }
-    p, li { font-size: 14px; }
-    footer { margin-top: 60px; font-size: 12px; color: #888; }
+    body { font-family: Georgia, serif; max-width: 780px; margin: 60px auto; padding: 0 28px; color: #1a1a1a; line-height: 1.8; background: #fff; }
+    h1 { font-size: 28px; margin-bottom: 6px; }
+    h2 { font-size: 17px; margin-top: 36px; border-bottom: 1px solid #ddd; padding-bottom: 6px; }
+    p, li { font-size: 15px; }
+    a { color: #0057b8; }
+    .meta { font-size: 13px; color: #666; margin-bottom: 32px; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    th, td { text-align: left; padding: 10px 12px; border: 1px solid #ddd; }
+    th { background: #f5f5f5; font-weight: 600; }
+    footer { margin-top: 64px; padding-top: 16px; border-top: 1px solid #eee; font-size: 12px; color: #888; }
   </style>
 </head>
 <body>
   <h1>Privacy Policy</h1>
-  <p><strong>Last updated:</strong> April 2026</p>
+  <p class="meta"><strong>Application:</strong> FilvockCutsApp &nbsp;|&nbsp; <strong>Last updated:</strong> April 6, 2026 &nbsp;|&nbsp; <strong>Website:</strong> <a href="https://filvock.github.io/FilvockCutsApp/">https://filvock.github.io/FilvockCutsApp/</a></p>
 
-  <h2>1. Overview</h2>
-  <p>MyCutsApp ("the App") is a personal desktop application that processes local video files and publishes clips to TikTok. This policy explains what data is collected and how it is used.</p>
+  <p>This Privacy Policy explains how <strong>FilvockCutsApp</strong> ("the Application", "the App", "we") collects, uses, stores, and protects information when you use our service. By using FilvockCutsApp, you agree to the practices described in this policy.</p>
 
-  <h2>2. Data We Collect</h2>
-  <p>The App collects and stores the following data <strong>locally on your device only</strong>:</p>
+  <h2>1. About FilvockCutsApp</h2>
+  <p><strong>FilvockCutsApp</strong> is a personal desktop application that processes local video files and publishes short-form clips to TikTok via TikTok's Content Posting API. The App runs entirely on the user's local machine and does not operate any external servers.</p>
+
+  <h2>2. Information We Collect</h2>
+  <p>FilvockCutsApp collects only the minimum data necessary to operate. All data is stored <strong>locally on your device</strong> and is never transmitted to any server operated by FilvockCutsApp.</p>
+
+  <table>
+    <thead>
+      <tr><th>Data Type</th><th>Purpose</th><th>Storage Location</th><th>Shared With</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>TikTok Access Token</td><td>Authenticate API calls to publish videos</td><td>Local config file on device</td><td>TikTok API only</td></tr>
+      <tr><td>TikTok Refresh Token</td><td>Renew access token when it expires</td><td>Local config file on device</td><td>TikTok API only</td></tr>
+      <tr><td>TikTok Open ID</td><td>Identify the connected TikTok account</td><td>Local config file on device</td><td>Not shared</td></tr>
+      <tr><td>Video files &amp; metadata</td><td>Processing and publishing clips</td><td>Local device only</td><td>TikTok API only (for publishing)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>3. Information We Do Not Collect</h2>
+  <p>FilvockCutsApp does <strong>not</strong> collect, store, or transmit:</p>
   <ul>
-    <li><strong>TikTok access token and refresh token</strong> — obtained during OAuth authentication, stored in a local configuration file to allow video publishing.</li>
-    <li><strong>TikTok open_id</strong> — a unique identifier returned by TikTok after authentication, used to identify the connected account.</li>
-    <li><strong>Video files and metadata</strong> — processed locally and never uploaded to any server other than TikTok.</li>
+    <li>Your name, email address, or any personal identification information</li>
+    <li>Passwords or login credentials for any platform</li>
+    <li>Usage analytics, telemetry, or behavioral data</li>
+    <li>Device identifiers, IP addresses, or location data</li>
+    <li>Any data from third parties or other users</li>
+  </ul>
+  <p>FilvockCutsApp does not use cookies, tracking pixels, or any form of advertising technology.</p>
+
+  <h2>4. How We Use Your Information</h2>
+  <p>The data collected by FilvockCutsApp is used exclusively to:</p>
+  <ul>
+    <li>Authenticate your TikTok account and maintain an active session</li>
+    <li>Upload and publish video clips to your TikTok account on your behalf</li>
+    <li>Display your connected account information within the App's dashboard</li>
   </ul>
 
-  <h2>3. Data We Do Not Collect</h2>
-  <ul>
-    <li>We do not collect names, email addresses, passwords, or any personal information.</li>
-    <li>We do not use analytics, tracking, or advertising of any kind.</li>
-    <li>We do not share any data with third parties other than TikTok (as necessary for publishing).</li>
-  </ul>
+  <h2>5. TikTok API and Third-Party Data Practices</h2>
+  <p>FilvockCutsApp uses TikTok's Login Kit and Content Posting API. When you authenticate, TikTok may collect and process data in accordance with its own <a href="https://www.tiktok.com/legal/privacy-policy" target="_blank">Privacy Policy</a>. FilvockCutsApp has no control over TikTok's data practices and encourages users to review TikTok's policies directly.</p>
+  <p>FilvockCutsApp is not affiliated with, endorsed by, or officially connected to TikTok or ByteDance Ltd.</p>
 
-  <h2>4. TikTok API</h2>
-  <p>The App integrates with TikTok's Login Kit and Content Posting API. When you authenticate, TikTok may collect data according to its own <a href="https://www.tiktok.com/legal/privacy-policy" target="_blank">Privacy Policy</a>. We encourage you to review it.</p>
+  <h2>6. Data Storage and Security</h2>
+  <p>All sensitive data (API tokens, credentials) used by FilvockCutsApp is stored in a local configuration file (<code>tiktok_config.json</code>) on your device. This file is not encrypted by default; users are responsible for maintaining the security of their device and file system.</p>
+  <p>No data is transmitted to any external server operated by FilvockCutsApp.</p>
 
-  <h2>5. Data Storage & Security</h2>
-  <p>All tokens and configuration are stored in a local JSON file on the user's computer. No data is transmitted to any external server other than TikTok's official API endpoints.</p>
+  <h2>7. Data Retention and Deletion</h2>
+  <p>FilvockCutsApp retains data only for as long as you use the App. You can delete all data at any time by removing the <code>tiktok_config.json</code> configuration file from the App's directory. This will disconnect your TikTok account and erase all stored tokens.</p>
+  <p>To revoke FilvockCutsApp's access to your TikTok account, you can also visit your TikTok account settings and remove the app's authorization.</p>
 
-  <h2>6. Data Deletion</h2>
-  <p>You can delete all stored data at any time by removing the <code>tiktok_config.json</code> file from the App's directory. This will disconnect your TikTok account from the App.</p>
+  <h2>8. Children's Privacy</h2>
+  <p>FilvockCutsApp is not directed at or intended for use by individuals under the age of 13. We do not knowingly collect any personal information from children under 13. If you believe a child has used the App, please contact us immediately.</p>
 
-  <h2>7. Contact</h2>
-  <p>For privacy questions, contact: <a href="mailto:juarezfilvock@gmail.com">juarezfilvock@gmail.com</a></p>
+  <h2>9. Changes to This Privacy Policy</h2>
+  <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated "Last updated" date. We encourage you to review this policy periodically. Continued use of FilvockCutsApp after changes are posted constitutes your acceptance of the revised policy. The current version is always available at <a href="https://filvock.github.io/FilvockCutsApp/privacy.html">https://filvock.github.io/FilvockCutsApp/privacy.html</a>.</p>
 
-  <footer>MyCutsApp · Personal Use Only</footer>
+  <h2>10. Contact Us</h2>
+  <p>If you have any questions, concerns, or requests regarding this Privacy Policy or FilvockCutsApp's data practices, please contact:</p>
+  <p><strong>FilvockCutsApp</strong><br>
+  Email: <a href="mailto:juarezfilvock@gmail.com">juarezfilvock@gmail.com</a></p>
+
+  <footer>&copy; 2026 FilvockCutsApp &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a> &nbsp;·&nbsp; <a href="index.html">Home</a></footer>
 </body>
 </html>

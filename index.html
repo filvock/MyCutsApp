@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FilvockCutsApp – Automated Short Video Publishing</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d0d0d; color: #e8e8e8; }
+    a { color: #f0b429; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Hero */
+    .hero { max-width: 860px; margin: 0 auto; padding: 96px 28px 80px; text-align: center; }
+    .hero-badge { display: inline-block; background: rgba(240,180,41,0.12); border: 1px solid rgba(240,180,41,0.3); color: #f0b429; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 5px 14px; border-radius: 99px; margin-bottom: 28px; }
+    .hero h1 { font-size: clamp(36px, 6vw, 60px); font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
+    .hero h1 span { color: #f0b429; }
+    .hero p { font-size: 18px; color: #aaa; max-width: 560px; margin: 0 auto 40px; line-height: 1.7; }
+    .hero-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 26px; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; border: none; }
+    .btn-primary { background: #f0b429; color: #0d0d0d; }
+    .btn-ghost { background: transparent; color: #e8e8e8; border: 1px solid rgba(255,255,255,0.15); }
+
+    /* Features */
+    .section { max-width: 860px; margin: 0 auto; padding: 72px 28px; }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #f0b429; margin-bottom: 12px; }
+    .section h2 { font-size: 32px; font-weight: 700; margin-bottom: 48px; }
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+    .feature { background: #161616; border: 1px solid #222; border-radius: 12px; padding: 28px; }
+    .feature-icon { font-size: 28px; margin-bottom: 14px; }
+    .feature h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .feature p { font-size: 14px; color: #888; line-height: 1.6; }
+
+    /* How it works */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; counter-reset: step; }
+    .step { background: #161616; border: 1px solid #222; border-radius: 12px; padding: 24px; counter-increment: step; position: relative; }
+    .step::before { content: counter(step); position: absolute; top: 16px; right: 16px; font-size: 32px; font-weight: 900; color: rgba(240,180,41,0.12); line-height: 1; }
+    .step h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+    .step p { font-size: 13px; color: #777; line-height: 1.5; }
+
+    /* API section */
+    .api-box { background: #161616; border: 1px solid #222; border-radius: 12px; padding: 36px; }
+    .api-box h3 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+    .api-box p { font-size: 14px; color: #888; line-height: 1.7; margin-bottom: 16px; }
+    .scope-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .scope { background: rgba(240,180,41,0.08); border: 1px solid rgba(240,180,41,0.2); color: #f0b429; font-size: 12px; font-family: monospace; padding: 4px 10px; border-radius: 4px; }
+
+    /* Footer */
+    footer { border-top: 1px solid #1c1c1c; padding: 32px 28px; text-align: center; font-size: 13px; color: #555; }
+    footer a { color: #777; }
+    footer a:hover { color: #aaa; }
+    .divider { border: none; border-top: 1px solid #1c1c1c; margin: 0; }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="hero-badge">Personal Video Automation Tool</div>
+    <h1>Meet <span>FilvockCutsApp</span></h1>
+    <p>Automatically generate short-form vertical clips from your videos and publish them directly to TikTok — all from a local dashboard on your computer.</p>
+    <div class="hero-links">
+      <a href="terms.html" class="btn btn-ghost">Terms of Service</a>
+      <a href="privacy.html" class="btn btn-ghost">Privacy Policy</a>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">Features</div>
+    <h2>Everything you need to automate your content</h2>
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">✂️</div>
+        <h3>Smart Clip Generation</h3>
+        <p>Automatically detects highlights from long videos and creates vertical 9:16 clips ready for TikTok and Reels.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">💬</div>
+        <h3>Auto Subtitles</h3>
+        <p>Transcribes audio using Whisper AI and burns animated subtitles directly into each clip.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🎵</div>
+        <h3>TikTok Publishing</h3>
+        <p>Connects to TikTok's Content Posting API to upload and publish clips automatically from a queue.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🎮</div>
+        <h3>Gaming Highlights</h3>
+        <p>Detects peak action moments in gameplay recordings and builds highlight clips automatically.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🔒</div>
+        <h3>100% Local</h3>
+        <p>Runs entirely on your computer. No cloud uploads, no subscriptions, no data sent to third parties.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">⚡</div>
+        <h3>Pipeline Automation</h3>
+        <p>One click runs the full pipeline: download → transcribe → cut → subtitle → publish.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">How it works</div>
+    <h2>Four steps from video to TikTok</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>Download</h3>
+        <p>Paste a YouTube URL. The app downloads the video automatically.</p>
+      </div>
+      <div class="step">
+        <h3>Transcribe</h3>
+        <p>Whisper AI transcribes the audio and generates timed subtitle segments.</p>
+      </div>
+      <div class="step">
+        <h3>Cut &amp; Edit</h3>
+        <p>ffmpeg crops to 9:16, adds subtitles, branding, and a progress bar.</p>
+      </div>
+      <div class="step">
+        <h3>Publish</h3>
+        <p>Clips are queued and published to TikTok via the Content Posting API.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <div class="section-label">TikTok API Integration</div>
+    <h2>Transparent API usage</h2>
+    <div class="api-box">
+      <h3>Products used</h3>
+      <p>FilvockCutsApp integrates with TikTok's <strong>Login Kit</strong> and <strong>Content Posting API</strong> to authenticate users and publish video content on their behalf. No data is collected or shared beyond what is required for publishing.</p>
+      <h3 style="margin-top:24px">Scopes requested</h3>
+      <p>The following permissions are requested during TikTok authentication:</p>
+      <div class="scope-list">
+        <span class="scope">user.info.basic</span>
+        <span class="scope">video.upload</span>
+        <span class="scope">video.publish</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2026 <strong>FilvockCutsApp</strong> &nbsp;·&nbsp;
+    <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="terms.html">Terms of Service</a> &nbsp;·&nbsp;
+    <a href="mailto:juarezfilvock@gmail.com">Contact</a>
+  </footer>
+
+</body>
+</html>
