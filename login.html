@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect with TikTok – FilvockCutsApp</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d0d0d; color: #e8e8e8; min-height: 100vh; display: flex; flex-direction: column; }
+    a { color: #f0b429; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header { padding: 20px 32px; border-bottom: 1px solid #1c1c1c; display: flex; align-items: center; gap: 12px; }
+    header a { color: #e8e8e8; font-weight: 700; font-size: 16px; }
+    header span { color: #555; }
+
+    .container { max-width: 520px; margin: 0 auto; padding: 72px 28px; flex: 1; }
+
+    .login-card { background: #161616; border: 1px solid #2a2a2a; border-radius: 14px; padding: 40px 36px; text-align: center; }
+    .app-icon { font-size: 48px; margin-bottom: 16px; }
+    .login-card h1 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+    .login-card p { font-size: 14px; color: #888; margin-bottom: 32px; line-height: 1.6; }
+
+    .btn-tiktok { display: inline-flex; align-items: center; gap: 12px; background: #fff; color: #000; font-size: 15px; font-weight: 700; padding: 14px 32px; border-radius: 8px; border: none; cursor: pointer; text-decoration: none; transition: background .15s; width: 100%; justify-content: center; }
+    .btn-tiktok:hover { background: #f0f0f0; text-decoration: none; }
+    .btn-tiktok svg { width: 22px; height: 22px; }
+
+    .divider { display: flex; align-items: center; gap: 12px; margin: 24px 0; color: #444; font-size: 12px; }
+    .divider::before, .divider::after { content: ''; flex: 1; border-top: 1px solid #2a2a2a; }
+
+    .info-box { background: #0f0f0f; border: 1px solid #2a2a2a; border-radius: 8px; padding: 16px; text-align: left; margin-top: 24px; }
+    .info-box h3 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #555; margin-bottom: 10px; }
+    .step { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 10px; font-size: 13px; color: #aaa; line-height: 1.5; }
+    .step:last-child { margin-bottom: 0; }
+    .step-num { background: #f0b429; color: #000; font-size: 11px; font-weight: 700; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+
+    .permissions { display: flex; flex-direction: column; gap: 8px; margin: 20px 0; }
+    .perm { display: flex; align-items: center; gap: 10px; background: #0f0f0f; border: 1px solid #2a2a2a; border-radius: 6px; padding: 10px 14px; font-size: 13px; }
+    .perm-icon { font-size: 16px; }
+    .perm-name { font-weight: 600; }
+    .perm-desc { font-size: 12px; color: #666; }
+
+    .legal { font-size: 11px; color: #444; margin-top: 20px; line-height: 1.6; }
+    .legal a { color: #666; }
+
+    footer { padding: 24px 32px; border-top: 1px solid #1c1c1c; text-align: center; font-size: 12px; color: #444; }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html">✂ FilvockCutsApp</a>
+  <span>/</span>
+  <span style="color:#888">Connect TikTok</span>
+</header>
+
+<div class="container">
+  <div class="login-card">
+    <div class="app-icon">✂</div>
+    <h1>Connect your TikTok account</h1>
+    <p>Authorize FilvockCutsApp to publish short video clips to your TikTok account automatically from your local dashboard.</p>
+
+    <!-- TikTok Login Button -->
+    <a href="#" class="btn-tiktok" id="tiktok-login-btn" onclick="connectTikTok()">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.53V6.75a4.85 4.85 0 01-1.02-.06z"/>
+      </svg>
+      Continue with TikTok
+    </a>
+
+    <div class="divider">Permissions requested</div>
+
+    <div class="permissions">
+      <div class="perm">
+        <span class="perm-icon">👤</span>
+        <div>
+          <div class="perm-name">user.info.basic</div>
+          <div class="perm-desc">Read your public profile to confirm account identity</div>
+        </div>
+      </div>
+      <div class="perm">
+        <span class="perm-icon">📤</span>
+        <div>
+          <div class="perm-name">video.upload</div>
+          <div class="perm-desc">Upload video files to TikTok servers</div>
+        </div>
+      </div>
+      <div class="perm">
+        <span class="perm-icon">✅</span>
+        <div>
+          <div class="perm-name">video.publish</div>
+          <div class="perm-desc">Publish uploaded videos as posts on your behalf</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h3>How it works</h3>
+      <div class="step">
+        <span class="step-num">1</span>
+        <span>Click "Continue with TikTok" — you will be redirected to TikTok's authorization page</span>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <span>Review and approve the requested permissions on TikTok's secure page</span>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <span>You are redirected back and your account is connected to FilvockCutsApp</span>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <span>Use the local dashboard to queue and publish clips to your account</span>
+      </div>
+    </div>
+
+    <p class="legal">
+      By connecting your account you agree to our
+      <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>.
+      FilvockCutsApp will only post content you explicitly queue for publishing.
+      You can revoke access at any time from your TikTok account settings.
+    </p>
+  </div>
+</div>
+
+<footer>
+  &copy; 2026 FilvockCutsApp &nbsp;·&nbsp;
+  <a href="index.html">Home</a> &nbsp;·&nbsp;
+  <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+  <a href="terms.html">Terms of Service</a>
+</footer>
+
+<script>
+  function connectTikTok() {
+    // Tenta conectar via app local (localhost:5000)
+    // Se o app não estiver rodando, mostra instrução
+    const btn = document.getElementById('tiktok-login-btn');
+    btn.textContent = 'Connecting...';
+
+    fetch('http://localhost:5000/api/tiktok/auth_url')
+      .then(r => r.json())
+      .then(d => {
+        if (d.url) {
+          window.location.href = d.url;
+        } else {
+          showAppRequired();
+        }
+      })
+      .catch(() => showAppRequired());
+
+    return false;
+  }
+
+  function showAppRequired() {
+    const btn = document.getElementById('tiktok-login-btn');
+    btn.outerHTML = `
+      <div style="background:#1a1a00;border:1px solid #444;border-radius:8px;padding:16px;font-size:13px;color:#ccc;text-align:left">
+        <strong style="color:#f0b429">⚠ Start FilvockCutsApp first</strong><br><br>
+        To connect your TikTok account, open a terminal and run:<br>
+        <code style="background:#000;padding:6px 10px;border-radius:4px;display:block;margin:8px 0;font-size:12px">python app.py</code>
+        Then visit <a href="http://localhost:5000" style="color:#f0b429">http://localhost:5000</a> and click TikTok → Connect.
+      </div>`;
+  }
+</script>
+</body>
+</html>
